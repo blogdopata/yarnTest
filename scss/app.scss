@@ -1,6 +1,79 @@
 $fondo-site : rebeccapurple;
 $color-text : white;
+
+@mixin border-1{
+	border:10px solid red;
+}
 body{
 	background: $fondo-site;
 	color: $color-text;
+}
+.contenedor{
+	width: 500px;
+	height: 500px;
+	background: #fff;
+	padding: 10px;
+	@include border-1;
+	margin:20px;
+	
+	/* flex-direction: row; valores del flex-direction
+	 flex-direction:
+	 1) row; < -- forma normal
+	 2) row-reverse;<-- tira los elentos a la derecha y los invierte
+	 3) column;<-- uno debajo de otro  
+	 4) column-reverse <-- alterna la posicon d elemntos */
+	display: flex;
+	flex-wrap : no-wrap;
+	flex-direction: row;
+	/* Valores de flex-wrap :
+	1) no-wrap <-- Valor por defecto ( si los elementos son mas grandes que el contenedor redifinira su ancho para entrar todos (equivalentes en anchura ( todos en la misma linea))) 
+	2) wrap <-- acomida los elemento en caso se pase de la anchura del contenedor
+	3) wrap-reverse <-- invierte los elementos*/
+	
+	/* flex-flow: row wrap; (Flex-flow es un atajo del flex-direction y flex-wrap) */
+	justify-content:center;
+	/* distribucion de elementos y content
+		flex-start <-- es la de defecto posicion left sin alterrar nada
+		flex-end <-- posiciona a la derecha sin alterar su valor
+		center <-- centra el contenido horizontalemnte 
+		space-around <--  distribuye los elemntos en todo el espacio
+		space-between <-- distribuye los elemntos en todo el espacio , pero sin los margenes al inicio o fin
+		*/
+
+	/* -----------------------------------------align-items:center; --> trabaja con no-wrap*/ 
+  /*align-items:center;
+ 	/* Para alinear verticalemnete
+ 	flex-start <-- valor por defecto 
+ 	flex-end <-- envia el contenido abajo en el contenedor 
+	center <-- Centra verticalmente 
+ 	stretch <-- abarca el 100% del contenedor
+ 	en donde cada item tiene heigh auto
+ 	baseline <-- parte del inicio de la fuente en caso de que una sea diferente d otra 
+ 	*/
+
+align-items:center; /* Mismo valores que align-item, pero se usa cuando se tienen varias filas de elementos*/
+	/*align-content:space-around, esta propiedad solo funciona para varias lineas de elemntos */;
+	
+
+	.elemento{
+		flex-grow:1;
+		flex-shrink: 1;
+		flex-basis: 350px;
+		/*flex: 1 1 350px;	*/
+		/*order:2; /* Inician del num elemn 2*/
+		color:#fff;
+		margin:5px;
+		width: 50px; // como un width
+		height: 50px;
+		background:#E67E22;
+		text-align: center;
+
+	}
+	.elemento2{
+		/*order:1; /* Inicia como 1ero*/
+	}
+	.elemento3{
+		align-self:flex-end; /*center, flex-start, stretch con--> height auto */
+	}
+
 }
