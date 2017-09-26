@@ -1,6 +1,40 @@
 $fondo-site : rebeccapurple;
 $color-text : white;
+$border-color: yellow;
+$fondo-item: red;
+
+@mixin bordealo($wdh){
+	border: {
+		width: $wdh;
+    style: solid;
+    color: $border-color;
+	}
+}
 body{
 	background: $fondo-site;
 	color: $color-text;
+}
+
+.container{
+	@include bordealo(5px);
+	background: blue;
+	height: 600px;
+	width: 400px;
+	display:flex;
+	flex-direction:column;
+	flex-wrap:no-wrap;
+	justify-content:space-around;
+
+
+	.item{
+		@include bordealo(3px);
+		background:$fondo-item;
+		
+	}
+	.item1{
+		background: gray;
+	}
+	.item3{
+		background: green;
+	}
 }

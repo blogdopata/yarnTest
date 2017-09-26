@@ -1,3 +1,31 @@
 body {
   background: rebeccapurple;
   color: white; }
+
+.container {
+  border-width: 5px;
+  border-style: solid;
+  border-color: yellow;
+  background: blue;
+  height: 600px;
+  width: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-wrap: no-wrap;
+  flex-wrap: no-wrap;
+  -ms-flex-pack: distribute;
+  justify-content: space-around; }
+  .container .item {
+    border-width: 3px;
+    border-style: solid;
+    border-color: yellow;
+    background: red; }
+  .container .item1 {
+    background: gray; }
+  .container .item3 {
+    background: green; }
