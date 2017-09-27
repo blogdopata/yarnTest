@@ -19,11 +19,13 @@ body{
 	@include bordealo(5px);
 	background: blue;
 	height: 600px;
-	width: 400px;
+	width: 500px;
 	display:flex;
-	flex-direction:column;
+	flex-direction:row;
 	flex-wrap:no-wrap;
-	justify-content:space-around;
+	justify-content:flex-start;
+	//align-items: flex-end;
+
 
 
 	.item{
@@ -33,8 +35,16 @@ body{
 	}
 	.item1{
 		background: gray;
+		flex: 1 1 0px;
+	
 	}
+	.item2{
+		flex: 1 1 0px;
+	}
+
 	.item3{
 		background: green;
+		//align-self: flex-start;
+		flex: 1 1 0px;
 	}
 }
